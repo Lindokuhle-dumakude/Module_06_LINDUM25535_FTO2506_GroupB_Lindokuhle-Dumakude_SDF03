@@ -1,0 +1,228 @@
+/* Base Styles */
+
+:root {
+    font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+    min-height: 100vh;
+    background-color: #fafafa;
+    color: #262626;
+    padding-bottom: 3rem;
+}
+
+img {
+    display: block;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #0c471c;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+/*  Set the profile-image to be the size of the parent element to
+    properly apply bordering style to the image.
+ */
+
+.profile-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-user-settings {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Used the desecendant selector to target the list of stats */
+.profile-stats ul {
+    display: flex;
+    gap: 50px;
+    padding: 20px;
+    margin: 0;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    color: ghostwhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-size: 14px;
+}
+
+.gallery-item:hover .gallery-item-info {
+    opacity: 1;
+}
+
+.gallery-item-info ul {
+     display: flex;
+    gap: 10px;
+    padding: 20px;
+    margin: 0;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1 px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 6px solid transparent;
+    border-top: 6px solid #0c2247;
+    border-radius: 50%;
+    animation: spin 0.5s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color:lightgrey
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-user-settings {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .profile-user-settings {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-stats ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
