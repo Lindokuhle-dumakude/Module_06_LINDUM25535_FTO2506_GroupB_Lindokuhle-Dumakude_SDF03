@@ -22,6 +22,8 @@ img {
     display: block;
 }
 
+/* Border-styling */
+
 .profile-image {
     width: 200px;
     height: 200px;
@@ -44,6 +46,12 @@ img {
     display: block;
 }
 
+button {
+    cursor: pointer;
+}
+
+/* Flexbox-styling */
+
 .profile {
     display: flex;
     flex-direction: row;
@@ -55,6 +63,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    cursor: auto;
 }
 
 .profile-user-settings {
@@ -126,6 +135,8 @@ img {
     border: 0;
 }
 
+/* Grid layout styling */
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -139,6 +150,7 @@ img {
     height: 100%;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .gallery-image {
@@ -158,6 +170,8 @@ img {
     margin: auto;
 }
 
+/* Animation styling */
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -167,6 +181,9 @@ img {
     }
 }
 
+/* Tried to center all the content to the middle of the page
+didn't seem to work.
+*/
 .body {
     margin: 0;
     padding: 0;
@@ -183,6 +200,8 @@ img {
     padding: 20px;
     box-sizing: border-box;
 }
+
+/* Responsive design styling */
 
 @media (max-width: 768px) {
     .container {
